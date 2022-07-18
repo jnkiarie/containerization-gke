@@ -7,7 +7,7 @@ const upload = multer();
 const productRoute = require('./routes/api/productRoute');
 
 // Connecting to the Database
-let mongodb_url = 'mongodb://host.docker.internal/';
+let mongodb_url = 'localhost:12717';
 let dbName = 'yolomy';
 
 // define a url to connect to the database
