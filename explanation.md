@@ -4,13 +4,13 @@
     * mongo.yaml - config file for deploying a mongodb app with its service (internal service)  
     * frontend.yaml - config file for deploying the app with external service usind LoadBalancer  
     
-
 ### 2. Docker-compose
     * Updated the docker compose file to include environment variables to expect values from a secret file 
     * Docker Images Built and Uploaded : jnkiarie/backend-image:v1.0.1 and jnkiarie/client-image:v1.0.1
 
 ### 3. Commands Used  
     * gcloud container clusters create moringa-cluster >> output as below  
+    
     * kubectl apply -f mongo-config.yaml  
     * kubectl apply -f mongo-secret.yaml  
     * kubectl apply -f mongo.yaml  
