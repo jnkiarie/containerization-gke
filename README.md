@@ -1,19 +1,19 @@
 # IP-WEEK-2 - Containerization with Docker
 
-In this project we will use a Dockerfile and Docker-compose to build and run the containers to make the web app run on our browser   
+In this project we will use deployment files to build and run the containers on GKE to make the web app run on our browser   
 Build a basic microservice to run the app  
 
 Description  
-This is IP for week two part 2 at Moringa school  
-Below is the link to the website  
-https://github.com/jnkiarie/containerization 
+This is a Configuration Management using Kubernetes on GKE  
+Below is the link to the repo  
+https://github.com/jnkiarie/containerization-gke  
 
 
 Technologies Tested  
 MongoDB  
 Dockerfile   
 Docker-Compose  
-Networking and Port mapping  
+Kubernetes  
 
 Support and contact details  
 jimmyn.kiarie@gmail.com  
