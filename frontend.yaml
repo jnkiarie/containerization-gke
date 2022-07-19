@@ -34,13 +34,13 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: mongo-config
-              key: mongo-url
+              key: backend-url
           
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: client-service
+  name: frontend-service
 spec:
   type: LoadBalancer
   selector:

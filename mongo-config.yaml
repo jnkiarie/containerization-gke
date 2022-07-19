@@ -4,3 +4,5 @@ metadata:
   name: mongo-config
 data:
   mongo-url: mongo-service
+  backend-url: backend-service
+  frontend-url: frontend-service
