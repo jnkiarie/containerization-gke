@@ -5,10 +5,32 @@ Build a basic microservice to run the app
 
 Description  
 This is a Configuration Management using Kubernetes on GKE  
-Below is the link to the repo  
-https://github.com/jnkiarie/containerization-gke  
+Below is the link to the deployment    
+http://35.185.201.169:3000/
+  
+### 1. Created four deployment yaml files as below  
+    * mongo-config.yaml - This is to set up the mongo database endpoint configMap and expose it to the  service file  
+    * mongo-secret - this is to configure mongodb username and password  
+    * mongo.yaml - config file for deploying a mongodb app with its service (internal service)  
+    * frontend.yaml - config file for deploying the app with external service usind LoadBalancer  
+    
+### 2. Docker-compose
+    * Updated the docker compose file to include environment variables to expect values from a secret file 
+    * Docker Images Built and Uploaded : jnkiarie/backend-image:v1.0.1 and jnkiarie/client-image:v1.0.1
 
-
+### 3. Commands Used  
+    * gcloud container clusters create moringa-cluster  
+    
+    * kubectl apply -f mongo-config.yaml  
+    * kubectl apply -f mongo-secret.yaml  
+    * kubectl apply -f mongo.yaml  
+    * kubectl apply -f frontend.yaml  
+    * kubectl describe pod (pod name) to see the configurations of a certain pod  
+    * kubectl get all - to display all the services, deployments and replicas created  
+    * kubectl get node -o wide - Get all nodes and the respective IP addresses  
+    * kubectl get secret  
+    * kubectl get pod  
+    
 Technologies Tested  
 MongoDB  
 Dockerfile   
