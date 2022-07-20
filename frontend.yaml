@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: client-deployment
   labels:
-    app: client
+    app: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: client
+      app: frontend
   template:
     metadata:
       labels:
-        app: client
+        app: frontend
     spec:
       containers:
       - name: client
@@ -44,9 +44,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: client
+    app: frontend
   ports:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 30100
+      nodePort: 30101

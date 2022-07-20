@@ -7,7 +7,7 @@ const upload = multer();
 const productRoute = require('./routes/api/productRoute');
 
 // Connecting to the Database
-let mongodb_url = 'mongodb://localhost:27017/';
+let mongodb_url = `mongodb://${process.env.USER_NAME}:${process.env.USER_PWD}@${process.env.DB_URL}`
 let dbName = 'yolomy';
 
 // define a url to connect to the database
@@ -18,6 +18,7 @@ let db = mongoose.connection;
 // Check Connection
 db.once('open', ()=>{
     console.log('Database connected successfully')
+    console.log(`${process.env.USER_NAME},${process.env.USER_PWD},${process.env.DB_URL}`)
 })
 
 // Check for DB Errors
