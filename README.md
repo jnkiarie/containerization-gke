@@ -19,8 +19,7 @@ http://34.168.38.163:3000/
     * Docker Images Built and Uploaded : jnkiarie/backend-image:v1.0.1 and jnkiarie/client-image:v1.0.1
 
 ### 3. Commands Used  
-    * gcloud container clusters create moringa-cluster  
-    
+    * gcloud container clusters create moringa-cluster- this is to create a cluster to manage the pods   
     * kubectl apply -f mongo-config.yaml  
     * kubectl apply -f mongo-secret.yaml  
     * kubectl apply -f mongo.yaml  
@@ -30,6 +29,7 @@ http://34.168.38.163:3000/
     * kubectl get node -o wide - Get all nodes and the respective IP addresses  
     * kubectl get secret  
     * kubectl get pod  
+    * kubectl logs <name of the pod>
     
 Technologies Tested  
 MongoDB  

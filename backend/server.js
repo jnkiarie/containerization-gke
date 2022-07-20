@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const multer = require('multer');
 const upload = multer();
+let MongoClient = require('mongodb').MongoClient
+app.use(express.urlencoded({extended:true}));
 
 const productRoute = require('./routes/api/productRoute');
 
@@ -11,6 +13,11 @@ let mongodb_url = `mongodb://${process.env.USER_NAME}:${process.env.USER_PWD}@${
 let dbName = 'yolomy';
 
 // define a url to connect to the database
+let mongoUrlK8s = `mongodb://${process.env.USER_NAME}:${process.env.USER_PWD}@${process.env.DB_URL}`
+let MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true  }
+MongoClient.connect(mongoUrlK8s, MongoClientOptions)
+
+
 const MONGODB_URI = process.env.MONGODB_URI || mongodb_url + dbName
 mongoose.connect(MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true  } )
 let db = mongoose.connection;

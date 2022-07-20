@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: mongo-config
 data:
-  mongo-url: mongo-service
+  mongo-url: mongodb://mongo-service/yolomy
   backend-url: backend-service
   frontend-url: frontend-service
