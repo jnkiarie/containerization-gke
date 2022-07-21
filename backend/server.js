@@ -4,7 +4,6 @@ const cors = require('cors');
 const multer = require('multer');
 const upload = multer();
 let MongoClient = require('mongodb').MongoClient
-app.use(express.urlencoded({extended:true}));
 
 const productRoute = require('./routes/api/productRoute');
 
