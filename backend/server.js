@@ -8,14 +8,8 @@ let MongoClient = require('mongodb').MongoClient
 const productRoute = require('./routes/api/productRoute');
 
 // Connecting to the Database
-let mongodb_url = `mongodb://${process.env.USER_NAME}:${process.env.USER_PWD}@${process.env.DB_URL}`
+let mongodb_url = `mongodb://${process.env.ME_CONFIG_MONGODB_ADMINUSERNAME}:${process.env.ME_CONFIG_MONGODB_ADMINPASSWORD}@${process.env.DB_URL}/`
 let dbName = 'yolomy';
-
-// define a url to connect to the database
-let mongoUrlK8s = `mongodb://${process.env.USER_NAME}:${process.env.USER_PWD}@${process.env.DB_URL}`
-let MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true  }
-MongoClient.connect(mongoUrlK8s, MongoClientOptions)
-
 
 const MONGODB_URI = process.env.MONGODB_URI || mongodb_url + dbName
 mongoose.connect(MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true  } )
@@ -24,13 +18,13 @@ let db = mongoose.connection;
 // Check Connection
 db.once('open', ()=>{
     console.log('Database connected successfully')
-    console.log(`${process.env.USER_NAME},${process.env.USER_PWD},${process.env.DB_URL}`)
 })
 
 // Check for DB Errors
 db.on('error', (error)=>{
     console.log(error);
     console.log('Testing Error')
+    console.log(`${MONGODB_URI}`)
 })
 
 // Initializing express

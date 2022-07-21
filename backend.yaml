@@ -20,12 +20,12 @@ spec:
         ports:
         - containerPort: 5000
         env:
-        - name: USER_NAME
+        - name: ME_CONFIG_MONGODB_ADMINUSERNAME
           valueFrom:
             secretKeyRef:
               name: mongo-secret
               key: mongo-user
-        - name: USER_PWD
+        - name: ME_CONFIG_MONGODB_ADMINPASSWORD
           valueFrom:
             secretKeyRef:
               name: mongo-secret
@@ -42,7 +42,6 @@ kind: Service
 metadata:
   name: backend-service
 spec:
-  type: ClusterIP
   selector:
     app: backend
   ports:

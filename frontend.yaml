@@ -19,22 +19,22 @@ spec:
         image: jnkiarie/client-image:v1.0.1
         ports:
         - containerPort: 3000
-        env:
-        - name: USER_NAME
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: mongo-user
-        - name: USER_PWD
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: mongo-password
-        - name: DB_URL
-          valueFrom:
-            configMapKeyRef:
-              name: mongo-config
-              key: backend-url
+        # env:
+        # - name: USER_NAME
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mongo-secret
+        #       key: mongo-user
+        # - name: USER_PWD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mongo-secret
+        #       key: mongo-password
+        # - name: DB_URL
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: mongo-config
+        #       key: backend-url
           
 ---
 apiVersion: v1

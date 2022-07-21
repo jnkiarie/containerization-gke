@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: mongo
+        image: mongo:5.0
         ports:
         - containerPort: 27017
         env:
@@ -30,6 +30,8 @@ spec:
             secretKeyRef:
               name: mongo-secret
               key: mongo-password
+        - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
+          value: "true"
         volumeMounts:
           - name: mongo-storage
             mountPath: mongo-storage:/data/db
@@ -44,7 +46,6 @@ kind: Service
 metadata:
   name: mongo-service
 spec:
-  type: ClusterIP
   selector:
     app: mongo
   ports:
