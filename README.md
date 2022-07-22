@@ -1,4 +1,4 @@
-# IP-WEEK-2 - Containerization with Docker
+# IP-WEEK-5 - Containerization with GKE
 
 In this project we will use deployment files to build and run the containers on GKE to make the web app run on our browser   
 Build a basic microservice to run the app  
