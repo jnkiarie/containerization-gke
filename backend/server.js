@@ -7,9 +7,14 @@ let MongoClient = require('mongodb').MongoClient
 
 const productRoute = require('./routes/api/productRoute');
 
+// // Connecting to the Database
+// let mongodb_url = `mongodb://${process.env.ME_CONFIG_MONGODB_ADMINUSERNAME}:${process.env.ME_CONFIG_MONGODB_ADMINPASSWORD}@${process.env.DB_URL}/`
+// let dbName = 'yolomy';
+
 // Connecting to the Database
-let mongodb_url = `mongodb://${process.env.ME_CONFIG_MONGODB_ADMINUSERNAME}:${process.env.ME_CONFIG_MONGODB_ADMINPASSWORD}@${process.env.DB_URL}/`
+let mongodb_url = `mongodb+srv://${process.env.ME_CONFIG_MONGODB_ADMINUSERNAME}:${process.env.ME_CONFIG_MONGODB_ADMINPASSWORD}@cluster0.ttane.mongodb.net/?retryWrites=true&w=majority:27017/`
 let dbName = 'yolomy';
+
 
 const MONGODB_URI = process.env.MONGODB_URI || mongodb_url + dbName
 mongoose.connect(MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true  } )
