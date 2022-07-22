@@ -24,6 +24,7 @@ http://35.197.98.236:3000/
     * kubectl apply -f mongo-secret.yaml  
     * kubectl apply -f mongo.yaml  
     * kubectl apply -f frontend.yaml  
+    * kubectl apply -f frontend.yaml  
     * kubectl describe pod (pod name) to see the configurations of a certain pod  
     * kubectl get all - to display all the services, deployments and replicas created  
     * kubectl get node -o wide - Get all nodes and the respective IP addresses  
