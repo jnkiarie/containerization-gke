@@ -6,7 +6,7 @@ Build a basic microservice to run the app
 Description  
 This is a Configuration Management using Kubernetes on GKE  
 Below is the link to the deployment    
-http://35.197.98.236:3000/
+http://34.83.28.115:3000/
   
 ### 1. Created four deployment yaml files as below  
     * mongo-config.yaml - This is to set up the mongo database endpoint configMap and expose it to the  service file  
